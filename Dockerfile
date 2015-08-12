@@ -1,5 +1,8 @@
 FROM resin/rpi-raspbian:jessie
 # Install Python.
+
+RUN ifconfig
+
 RUN apt-get update \
 	&& apt-get install -y python \
 	# Remove package lists to free up space
@@ -10,5 +13,3 @@ COPY . /app
 
 # run python script when container lands on device
 CMD ["python", "/app/hello.py"]
-
-RUN ifconfig
