@@ -5,6 +5,8 @@ RUN apt-get update \
 	# Remove package lists to free up space
 	&& rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y net-tools
+
 RUN ifconfig
 
 # copy current directory into /app
